@@ -1,0 +1,4 @@
+rootProject.name = 'minecraft-1-16-3-seed-cracker'
+
+include 'stage1-coord-triangulator'
+include 'stage2-seed-cracker:stage2-decorator-cracker'

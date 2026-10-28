@@ -1,0 +1,28 @@
+{
+  "searchBounds": {
+    "minX": -10000,
+    "maxX": 10000,
+    "minZ": -10000,
+    "maxZ": 10000
+  },
+  "orientations": [
+    "NORTH",
+    "SOUTH"
+  ],
+  "bedrockLoopOrder": "BOTH",
+  "threadCount": 0,
+  "stripMineDistanceRange": {
+    "minDistance": 67,
+    "maxDistance": 110
+  },
+  "elevations": {
+    "seaLevelLagoon": 62,
+    "sandSlopeMinY": 63,
+    "sandSlopeMaxY": 70,
+    "houseFloorDoorY": 68,
+    "poppyLeftY": 72,
+    "poppyRightY": 73,
+    "stripMineFloorY": 4
+  },
+  "earlyPruneThreshold": 3
+}

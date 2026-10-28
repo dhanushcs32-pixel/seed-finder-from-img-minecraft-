@@ -1,0 +1,73 @@
+{
+  "description": "Observed relative block features from screenshot data. All dx/dz are relative to the cliffside house door at (0, 68, 0). Fill in observedVariant with 0, 1, 2, or 3 from screenshot texture inspection.",
+  "doorOrigin": {
+    "dx": 0,
+    "y": 68,
+    "dz": 0,
+    "type": "STONE_TOP",
+    "observedVariant": 0,
+    "comment": "Floor block directly underneath the oak door at Y=68"
+  },
+  "sandSlope": [
+    { "dx": -6, "y": 63, "dz": 2, "type": "SAND_TOP", "observedVariant": 0, "comment": "Lagoon edge sand block at Y=63" },
+    { "dx": -6, "y": 64, "dz": 3, "type": "SAND_TOP", "observedVariant": 1, "comment": "Sand slope step 1 at Y=64" },
+    { "dx": -5, "y": 65, "dz": 3, "type": "SAND_TOP", "observedVariant": 2, "comment": "Sand slope step 2 at Y=65" },
+    { "dx": -5, "y": 66, "dz": 4, "type": "SAND_TOP", "observedVariant": 3, "comment": "Sand slope step 3 at Y=66" },
+    { "dx": -4, "y": 67, "dz": 4, "type": "SAND_TOP", "observedVariant": 0, "comment": "Sand slope step 4 at Y=67" },
+    { "dx": -4, "y": 68, "dz": 5, "type": "SAND_TOP", "observedVariant": 1, "comment": "Sand slope step 5 at Y=68" },
+    { "dx": -3, "y": 69, "dz": 5, "type": "SAND_TOP", "observedVariant": 2, "comment": "Sand slope step 6 at Y=69" },
+    { "dx": -3, "y": 70, "dz": 6, "type": "SAND_TOP", "observedVariant": 3, "comment": "Sand slope ridge top at Y=70" }
+  ],
+  "houseSurroundings": [
+    { "dx": 0, "y": 68, "dz": 1, "type": "STONE_TOP", "observedVariant": 1, "comment": "Walkway stone directly in front of door" },
+    { "dx": 1, "y": 68, "dz": 0, "type": "GRASS_TOP", "observedVariant": 2, "comment": "Cliff grass right of door" },
+    { "dx": -1, "y": 68, "dz": 0, "type": "GRASS_TOP", "observedVariant": 0, "comment": "Cliff grass left of door" },
+    { "dx": 1, "y": 68, "dz": 1, "type": "GRASS_TOP", "observedVariant": 3, "comment": "Garden corner grass" },
+    { "dx": 2, "y": 68, "dz": -1, "type": "STONE_TOP", "observedVariant": 0, "comment": "Cliffside base foundation" },
+    { "dx": -2, "y": 67, "dz": 1, "type": "STONE_SIDE", "observedVariant": 1, "comment": "Cliff exposed stone wall" }
+  ],
+  "poppies": [
+    {
+      "name": "leftPoppy",
+      "dx": -2,
+      "y": 72,
+      "dz": 4,
+      "type": "POPPY_OFFSET",
+      "observedOffsetX": 7,
+      "observedOffsetZ": 12,
+      "underlyingBlock": { "dx": -2, "y": 71, "dz": 4, "type": "GRASS_TOP", "observedVariant": 1 },
+      "comment": "Left poppy at Y=72 on grass at Y=71"
+    },
+    {
+      "name": "rightPoppy",
+      "dx": 3,
+      "y": 73,
+      "dz": 2,
+      "type": "POPPY_OFFSET",
+      "observedOffsetX": 3,
+      "observedOffsetZ": 9,
+      "underlyingBlock": { "dx": 3, "y": 72, "dz": 2, "type": "GRASS_TOP", "observedVariant": 2 },
+      "comment": "Right poppy at Y=73 on grass at Y=72"
+    }
+  ],
+  "stripMine": {
+    "relativeOffsetAlongAxis": 80,
+    "floorY": 4,
+    "blocks": [
+      { "dx": 0, "y": 4, "dz": 80, "type": "STONE_TOP", "observedVariant": 0, "comment": "Strip mine walking path floor at Y=4" },
+      { "dx": 1, "y": 4, "dz": 80, "type": "BEDROCK_PRESENT", "observedVariant": 1, "comment": "Exposed bedrock bump in floor at Y=4" },
+      { "dx": 0, "y": 4, "dz": 81, "type": "BEDROCK_ABSENT", "observedVariant": 0, "comment": "Stone floor, no bedrock at Y=4" },
+      { "dx": -1, "y": 4, "dz": 80, "type": "BEDROCK_ABSENT", "observedVariant": 0, "comment": "Mine floor stone block" },
+      { "dx": 1, "y": 4, "dz": 82, "type": "BEDROCK_TOP", "observedVariant": 2, "comment": "Bedrock block top texture variant" },
+      { "dx": 0, "y": 4, "dz": 83, "type": "STONE_TOP", "observedVariant": 3, "comment": "Mine tunnel stone" },
+      { "dx": -1, "y": 4, "dz": 84, "type": "STONE_TOP", "observedVariant": 1, "comment": "Mine tunnel stone" }
+    ],
+    "diamondVein": {
+      "dx": 0,
+      "y": 4,
+      "dz": 82,
+      "size": 8,
+      "comment": "Diamond Ore vein exposed at Y=4 in the strip mine"
+    }
+  }
+}
