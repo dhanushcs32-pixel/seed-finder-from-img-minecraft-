@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+application {
+    mainClass = 'com.seedcrack.stage2.Stage2DecoratorFilter'
+}
+
+tasks.named('run') {
+    workingDir = rootProject.projectDir
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://maven.seedfinding.com' }
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    // Optional remote dependencies; built-in implementations ensure offline self-sufficiency
+    compileOnly 'com.github.KaptainWutax:SeedUtils:master-SNAPSHOT'
+    compileOnly 'com.github.KaptainWutax:BiomeUtils:master-SNAPSHOT'
+    compileOnly 'com.github.KaptainWutax:FeatureUtils:master-SNAPSHOT'
+    compileOnly 'com.github.mjtb49:ChunkRandomReversal:master-SNAPSHOT'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+}
+
+test {
+    useJUnitPlatform()
+}
