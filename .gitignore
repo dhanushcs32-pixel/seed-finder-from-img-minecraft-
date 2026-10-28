@@ -1,0 +1,190 @@
+# ==============================================================================
+# Strict .gitignore for Minecraft 1.16.3 Seed Cracking Workspace
+# Covers: Java 17+, Gradle, C11 / Cubiomes, CMake, Compilers, IDEs, OS & Outputs
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Java & JVM
+# ------------------------------------------------------------------------------
+*.class
+*.war
+*.ear
+*.nar
+hs_err_pid*
+replay_pid*
+.attach_pid*
+
+# ------------------------------------------------------------------------------
+# 2. Gradle Build System
+# ------------------------------------------------------------------------------
+.gradle/
+build/
+**/build/
+!src/**/build/
+.gradletasknamecache
+
+# Strict exception: Gradle wrapper JAR & properties MUST be committed
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# ------------------------------------------------------------------------------
+# 3. C / C++ Compilation & Executables
+# ------------------------------------------------------------------------------
+# Compiled Object files
+*.o
+*.obj
+*.ko
+*.mod.o
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Static & Dynamic Libraries
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+
+# Native Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Seed Cracker compiled binaries
+biome_seed_finder
+biome_seed_finder.exe
+**/biome_seed_finder
+**/biome_seed_finder.exe
+
+# Debug symbols & profiling
+*.dSYM/
+*.su
+*.idb
+*.pdb
+*.ilk
+*.exp
+
+# ------------------------------------------------------------------------------
+# 4. CMake & Build Systems
+# ------------------------------------------------------------------------------
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Testing/
+Makefile.cmake
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+cmake-build-*/
+_deps/
+.ninja_deps
+.ninja_log
+build.ninja
+
+# ------------------------------------------------------------------------------
+# 5. Visual Studio / MSVC
+# ------------------------------------------------------------------------------
+.vs/
+*.vcxproj.user
+*.vcxproj.filters
+*.VC.db
+*.VC.opendb
+*.sln.docstates
+
+# ------------------------------------------------------------------------------
+# 6. IDEs & Editors
+# ------------------------------------------------------------------------------
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+.history/
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
+
+# NetBeans
+nbproject/private/
+nbbuild/
+dist/
+nbproject/genfiles.properties
+nbproject/project.properties
+
+# Vim / Emacs / Sublime
+*~
+*.swp
+*.swo
+*.swn
+.#*
+\#*#
+*.sublime-project
+*.sublime-workspace
+
+# ------------------------------------------------------------------------------
+# 7. Operating System Artifacts
+# ------------------------------------------------------------------------------
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Linux
+.fuse_hidden*
+.directory
+.Trash-*
+
+# ------------------------------------------------------------------------------
+# 8. Project Runtime Outputs & Cracking Artifacts
+# ------------------------------------------------------------------------------
+# Generated candidate files & cracked world seeds (only keep folder via .gitkeep)
+output/*
+!output/.gitkeep
+
+# Root temporary / stray results
+candidate_48bit_seeds.txt
+stage1_coordinates.json
+recovered_world_seeds.txt
+
+# ------------------------------------------------------------------------------
+# 9. Logs, Caches & Temporary Files
+# ------------------------------------------------------------------------------
+*.log
+*.tmp
+*.bak
+*.orig
+*.patch
+scratch/
+tmp/
+temp/
