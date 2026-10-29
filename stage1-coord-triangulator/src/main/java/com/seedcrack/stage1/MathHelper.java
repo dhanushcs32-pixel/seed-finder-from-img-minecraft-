@@ -21,10 +21,33 @@ public final class MathHelper {
     /**
      * Returns the texture rotation / model variant index for a block at (x, y, z).
      * Modulo is typically 4 for Sand, Grass, Dirt, Stone, and Bedrock top faces.
+     * Prevents the Integer.MIN_VALUE negative modulo trap.
      */
     public static int getTextureVariant(int x, int y, int z, int mod) {
-        long rand = getCoordinateRandom(x, y, z);
-        return Math.abs((int)rand) % mod;
+        int r = (int) getCoordinateRandom(x, y, z);
+        return (r == Integer.MIN_VALUE ? 0 : Math.abs(r)) % mod;
+    }
+
+    /**
+     * For mod = 4 (Stone & Bedrock):
+     * On up and down faces (floor and ceiling), Variants 0 and 3 look identical (topParity = 0),
+     * and Variants 1 and 2 look identical (topParity = 1).
+     * Invariant under 180-deg camera rotation (North vs South).
+     */
+    public static int getTopParity(int x, int y, int z) {
+        int v = getTextureVariant(x, y, z, 4);
+        return (v == 1 || v == 2) ? 1 : 0;
+    }
+
+    /**
+     * On vertical side walls (north, south, east, west), cube_mirrored_all.json flips U horizontally ([16, 0, 0, 16]),
+     * whereas y: 180 rotates the block without flipping U.
+     * Thus on side walls, Variants 0 and 2 are unmirrored (wallMirror = 0),
+     * and Variants 1 and 3 are horizontally mirrored (wallMirror = 1).
+     */
+    public static int getWallMirror(int x, int y, int z) {
+        int v = getTextureVariant(x, y, z, 4);
+        return (v & 1); // 0 for variants {0, 2}, 1 for variants {1, 3}
     }
 
     /**
