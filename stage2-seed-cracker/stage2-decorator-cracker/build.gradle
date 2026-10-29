@@ -4,10 +4,23 @@ plugins {
 }
 
 application {
-    mainClass = 'com.seedcrack.stage2.Stage2DecoratorFilter'
+    mainClass = project.hasProperty('mainClass') ? project.getProperty('mainClass') : 'com.seedcrack.stage2.Stage2DecoratorFilter'
 }
 
 tasks.named('run') {
+    classpath = sourceSets.main.compileClasspath + sourceSets.main.runtimeClasspath
+    workingDir = rootProject.projectDir
+}
+
+tasks.register('runSeedRecovery', JavaExec) {
+    mainClass = 'com.seedcrack.stage2.Stage2SeedRecoveryEngine'
+    classpath = sourceSets.main.compileClasspath + sourceSets.main.runtimeClasspath
+    workingDir = rootProject.projectDir
+}
+
+tasks.register('runParallelCracker', JavaExec) {
+    mainClass = 'com.seedcrack.stage2.Stage2ParallelCracker'
+    classpath = sourceSets.main.compileClasspath + sourceSets.main.runtimeClasspath
     workingDir = rootProject.projectDir
 }
 
@@ -20,11 +33,13 @@ repositories {
 dependencies {
     implementation 'com.google.code.gson:gson:2.10.1'
 
-    // Optional remote dependencies; built-in implementations ensure offline self-sufficiency
-    compileOnly 'com.github.KaptainWutax:SeedUtils:master-SNAPSHOT'
-    compileOnly 'com.github.KaptainWutax:BiomeUtils:master-SNAPSHOT'
-    compileOnly 'com.github.KaptainWutax:FeatureUtils:master-SNAPSHOT'
-    compileOnly 'com.github.mjtb49:ChunkRandomReversal:master-SNAPSHOT'
+    implementation 'com.github.KaptainWutax:SeedUtils:master-SNAPSHOT'
+    runtimeOnly 'com.github.KaptainWutax:SeedUtils:master-SNAPSHOT'
+    implementation 'com.github.KaptainWutax:MCUtils:master-SNAPSHOT'
+    runtimeOnly 'com.github.KaptainWutax:MCUtils:master-SNAPSHOT'
+    implementation 'com.github.KaptainWutax:BiomeUtils:master-SNAPSHOT'
+    runtimeOnly 'com.github.KaptainWutax:BiomeUtils:master-SNAPSHOT'
+    implementation 'com.github.mjtb49:ChunkRandomReversal:master-SNAPSHOT'
 
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
 }
