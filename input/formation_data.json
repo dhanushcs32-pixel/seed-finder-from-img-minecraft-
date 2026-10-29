@@ -1,73 +1,66 @@
 {
-  "description": "Observed relative block features from screenshot data. All dx/dz are relative to the cliffside house door at (0, 68, 0). Fill in observedVariant with 0, 1, 2, or 3 from screenshot texture inspection.",
-  "doorOrigin": {
-    "dx": 0,
-    "y": 68,
-    "dz": 0,
-    "type": "STONE_TOP",
-    "observedVariant": 0,
-    "comment": "Floor block directly underneath the oak door at Y=68"
+  "sourceScreenshot": "2020-10-19_18.30.57.png",
+  "description": "Observed relative block features extracted from 2020-10-19_18.30.57.png tunnel floor, ceiling, and side walls.",
+  "tunnelOrigin": {
+    "comment": "Tunnel origin at d=0, dx=0 (y0 tested in {3, 4})"
   },
-  "sandSlope": [
-    { "dx": -6, "y": 63, "dz": 2, "type": "SAND_TOP", "observedVariant": 0, "comment": "Lagoon edge sand block at Y=63" },
-    { "dx": -6, "y": 64, "dz": 3, "type": "SAND_TOP", "observedVariant": 1, "comment": "Sand slope step 1 at Y=64" },
-    { "dx": -5, "y": 65, "dz": 3, "type": "SAND_TOP", "observedVariant": 2, "comment": "Sand slope step 2 at Y=65" },
-    { "dx": -5, "y": 66, "dz": 4, "type": "SAND_TOP", "observedVariant": 3, "comment": "Sand slope step 3 at Y=66" },
-    { "dx": -4, "y": 67, "dz": 4, "type": "SAND_TOP", "observedVariant": 0, "comment": "Sand slope step 4 at Y=67" },
-    { "dx": -4, "y": 68, "dz": 5, "type": "SAND_TOP", "observedVariant": 1, "comment": "Sand slope step 5 at Y=68" },
-    { "dx": -3, "y": 69, "dz": 5, "type": "SAND_TOP", "observedVariant": 2, "comment": "Sand slope step 6 at Y=69" },
-    { "dx": -3, "y": 70, "dz": 6, "type": "SAND_TOP", "observedVariant": 3, "comment": "Sand slope ridge top at Y=70" }
+  "searchBounds": {
+    "minX": -10000,
+    "maxX": 10000,
+    "minZ": -10000,
+    "maxZ": 10000
+  },
+  "yLevels": [4, 3],
+  "orientations": [
+    "NORTH",
+    "SOUTH"
   ],
-  "houseSurroundings": [
-    { "dx": 0, "y": 68, "dz": 1, "type": "STONE_TOP", "observedVariant": 1, "comment": "Walkway stone directly in front of door" },
-    { "dx": 1, "y": 68, "dz": 0, "type": "GRASS_TOP", "observedVariant": 2, "comment": "Cliff grass right of door" },
-    { "dx": -1, "y": 68, "dz": 0, "type": "GRASS_TOP", "observedVariant": 0, "comment": "Cliff grass left of door" },
-    { "dx": 1, "y": 68, "dz": 1, "type": "GRASS_TOP", "observedVariant": 3, "comment": "Garden corner grass" },
-    { "dx": 2, "y": 68, "dz": -1, "type": "STONE_TOP", "observedVariant": 0, "comment": "Cliffside base foundation" },
-    { "dx": -2, "y": 67, "dz": 1, "type": "STONE_SIDE", "observedVariant": 1, "comment": "Cliff exposed stone wall" }
+  "bedrockLoopOrders": [
+    "X_INNER_Z_OUTER",
+    "Z_INNER_X_OUTER"
   ],
-  "poppies": [
-    {
-      "name": "leftPoppy",
-      "dx": -2,
-      "y": 72,
-      "dz": 4,
-      "type": "POPPY_OFFSET",
-      "observedOffsetX": 7,
-      "observedOffsetZ": 12,
-      "underlyingBlock": { "dx": -2, "y": 71, "dz": 4, "type": "GRASS_TOP", "observedVariant": 1 },
-      "comment": "Left poppy at Y=72 on grass at Y=71"
-    },
-    {
-      "name": "rightPoppy",
-      "dx": 3,
-      "y": 73,
-      "dz": 2,
-      "type": "POPPY_OFFSET",
-      "observedOffsetX": 3,
-      "observedOffsetZ": 9,
-      "underlyingBlock": { "dx": 3, "y": 72, "dz": 2, "type": "GRASS_TOP", "observedVariant": 2 },
-      "comment": "Right poppy at Y=73 on grass at Y=72"
-    }
+  "bedrockObservations": [
+    { "d": 0, "dx": 0, "yOffset": 0, "isBedrock": true, "strict": true, "comment": "Floor bedrock" },
+    { "d": 1, "dx": 0, "yOffset": 0, "isBedrock": true, "strict": true, "comment": "Floor bedrock" },
+    { "d": 2, "dx": 0, "yOffset": 0, "isBedrock": false, "strict": true, "comment": "Stone floor" },
+    { "d": 3, "dx": 0, "yOffset": 0, "isBedrock": false, "strict": true, "comment": "Stone floor" },
+    { "d": 4, "dx": 0, "yOffset": 0, "isBedrock": true, "strict": false, "comment": "Optional/wildcard in secondary pass" },
+    { "d": 5, "dx": 0, "yOffset": 0, "isBedrock": true, "strict": true, "comment": "Bedrock floor in cross-tunnel" },
+    { "d": 6, "dx": 0, "yOffset": 0, "isBedrock": true, "strict": true, "comment": "Bedrock floor in cross-tunnel" }
   ],
-  "stripMine": {
-    "relativeOffsetAlongAxis": 80,
-    "floorY": 4,
-    "blocks": [
-      { "dx": 0, "y": 4, "dz": 80, "type": "STONE_TOP", "observedVariant": 0, "comment": "Strip mine walking path floor at Y=4" },
-      { "dx": 1, "y": 4, "dz": 80, "type": "BEDROCK_PRESENT", "observedVariant": 1, "comment": "Exposed bedrock bump in floor at Y=4" },
-      { "dx": 0, "y": 4, "dz": 81, "type": "BEDROCK_ABSENT", "observedVariant": 0, "comment": "Stone floor, no bedrock at Y=4" },
-      { "dx": -1, "y": 4, "dz": 80, "type": "BEDROCK_ABSENT", "observedVariant": 0, "comment": "Mine floor stone block" },
-      { "dx": 1, "y": 4, "dz": 82, "type": "BEDROCK_TOP", "observedVariant": 2, "comment": "Bedrock block top texture variant" },
-      { "dx": 0, "y": 4, "dz": 83, "type": "STONE_TOP", "observedVariant": 3, "comment": "Mine tunnel stone" },
-      { "dx": -1, "y": 4, "dz": 84, "type": "STONE_TOP", "observedVariant": 1, "comment": "Mine tunnel stone" }
+  "parityConstraints": {
+    "floor": [
+      { "d1": 0, "d2": 1, "equal": false, "comment": "First two bedrock blocks rotated 180 deg relative to each other" },
+      { "d1": 2, "d2": 3, "equal": false, "comment": "Two stone floor blocks rotated 180 deg relative to each other" },
+      { "d1": 4, "d2": 5, "equal": true, "comment": "Two bedrock blocks in cross-tunnel share same orientation" }
     ],
-    "diamondVein": {
-      "dx": 0,
-      "y": 4,
-      "dz": 82,
-      "size": 8,
-      "comment": "Diamond Ore vein exposed at Y=4 in the strip mine"
+    "ceiling": [
+      { "d1": 0, "d2": 1, "equal": true, "comment": "Ceiling blocks share parity" },
+      { "d1": 1, "d2": 2, "equal": false, "comment": "Ceiling blocks opposite parity" },
+      { "d1": 2, "d2": 3, "equal": true, "comment": "Ceiling blocks share parity" }
+    ]
+  },
+  "wallMirrorConstraints": {
+    "leftWall": {
+      "dx": -1,
+      "upper": [
+        { "d1": 1, "d2": 2, "equal": false, "comment": "Upper left wall mirror flip" }
+      ],
+      "lower": [
+        { "d1": 1, "d2": 2, "equal": true, "comment": "Lower left wall same mirror" },
+        { "d1": 2, "d2": 3, "equal": false, "comment": "Lower left wall mirror flip" }
+      ]
+    },
+    "rightWall": {
+      "dx": 1,
+      "upper": [
+        { "d1": 1, "d2": 2, "equal": false, "comment": "Upper right wall mirror flip" },
+        { "d1": 2, "d2": 3, "equal": true, "comment": "Upper right wall same mirror" }
+      ],
+      "lower": [
+        { "d1": 1, "d2": 2, "equal": true, "comment": "Lower right wall same mirror" },
+        { "d1": 2, "d2": 3, "equal": true, "comment": "Lower right wall same mirror" }
+      ]
     }
   }
 }

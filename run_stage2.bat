@@ -34,10 +34,9 @@ if not exist "%BIOME_EXE%" (
             popd
         ) else (
             echo [NOTICE] GCC or MSVC not found on PATH.
-            echo [NOTICE] 48-bit seeds have been cracked and written to output/candidate_48bit_seeds.txt.
-            echo [NOTICE] Once gcc or cmake is installed, build stage2-seed-cracker/stage2-biome-filter/
-            echo [NOTICE] or compile using: gcc -O3 -std=c11 -fopenmp biome_seed_finder.c cubiomes/*.c -lm -o biome_seed_finder.exe
-            exit /b 0
+            echo [INFO] Running Stage 2 Biome ^& Spawn Filter via Java / BiomeUtils Engine...
+            call gradlew.bat :stage2-seed-cracker:stage2-decorator-cracker:runSeedRecovery
+            exit /b %ERRORLEVEL%
         )
     )
 )

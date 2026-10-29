@@ -11,6 +11,12 @@ tasks.named('run') {
     workingDir = rootProject.projectDir
 }
 
+tasks.register('crossFilter', JavaExec) {
+    mainClass = 'com.seedcrack.stage1.Stage1CrossFilter'
+    classpath = sourceSets.main.runtimeClasspath
+    workingDir = rootProject.projectDir
+}
+
 dependencies {
     implementation 'com.google.code.gson:gson:2.10.1'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
