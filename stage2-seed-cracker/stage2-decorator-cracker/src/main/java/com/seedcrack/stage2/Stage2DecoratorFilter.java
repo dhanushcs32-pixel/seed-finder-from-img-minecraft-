@@ -37,7 +37,10 @@ public class Stage2DecoratorFilter {
         }
 
         if (!coordsSpecified) {
-            File stage1Out = new File("output/stage1_coordinates.json");
+            File stage1Out = new File("output/stage1_filtered_coordinates.json");
+            if (!stage1Out.exists()) {
+                stage1Out = new File("output/stage1_coordinates.json");
+            }
             if (stage1Out.exists()) {
                 try (FileReader reader = new FileReader(stage1Out)) {
                     JsonObject root = new Gson().fromJson(reader, JsonObject.class);
@@ -46,9 +49,9 @@ public class Stage2DecoratorFilter {
                         JsonObject best = candidates.get(0).getAsJsonObject();
                         baseX = best.get("baseX").getAsInt();
                         baseZ = best.get("baseZ").getAsInt();
-                        mineX = best.get("mineX").getAsInt();
-                        mineZ = best.get("mineZ").getAsInt();
-                        System.out.printf("[INFO] Auto-loaded candidate from Stage 1: Base (%d, 68, %d) | Mine (%d, 4, %d)%n",
+                        mineX = best.has("diamondX") ? best.get("diamondX").getAsInt() : best.get("mineX").getAsInt();
+                        mineZ = best.has("diamondZ") ? best.get("diamondZ").getAsInt() : best.get("mineZ").getAsInt();
+                        System.out.printf("[INFO] Auto-loaded candidate from Stage 1: Base (%d, 68, %d) | Diamond (%d, 4, %d)%n",
                                 baseX, baseZ, mineX, mineZ);
                     } else {
                         System.out.println("[WARN] Stage 1 output has no candidates. Using default benchmark coordinates.");
